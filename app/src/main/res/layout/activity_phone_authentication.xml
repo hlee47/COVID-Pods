@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constrain_layout_phone_auth"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PhoneAuthenticationActivity"
+    android:background="#fdfdfd"
+    >
+
+    <TextView
+        android:id="@+id/text_self_auth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="50dp"
+        android:text="PHONE VERIFICATION"
+        android:textColor="@color/colorBlack2D2D"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_self_auth_need"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Phone authentication is required to access"
+        android:textColor="@color/colorOrangeF79256"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/text_self_auth"
+        app:layout_constraintTop_toBottomOf="@id/text_self_auth" />
+
+    <TextView
+        android:id="@+id/text_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Enter Phone Number"
+        android:textColor="@color/colorGray8C8C"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/text_self_auth"
+        app:layout_constraintTop_toBottomOf="@id/text_self_auth_need" />
+
+    <EditText
+        android:id="@+id/et_mobile"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_et_stroke_gray_e3e3e3_radius_2dp"
+        android:inputType="numberDecimal"
+        android:maxLength="10"
+        android:padding="8dp"
+        android:singleLine="true"
+        android:text=""
+        app:layout_constraintEnd_toStartOf="@id/btn_auth_request"
+        app:layout_constraintStart_toStartOf="@id/text_self_auth"
+        app:layout_constraintTop_toBottomOf="@id/text_phone" />
+
+    <Button
+        android:id="@+id/btn_auth_request"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginEnd="28dp"
+        android:enabled="false"
+        android:focusable="true"
+        android:text="Request\nCode"
+        android:textSize="14sp"
+        android:textColor="@color/colorWhiteFDFD"
+        android:background="@drawable/button"
+        app:layout_constraintBottom_toBottomOf="@id/et_mobile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/et_mobile"
+        app:layout_constraintTop_toTopOf="@id/et_mobile" />
+
+    <TextView
+        android:id="@+id/text_enter_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Enter authentication code"
+        android:textColor="@color/colorGray8C8C"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/text_self_auth"
+        app:layout_constraintTop_toBottomOf="@id/et_mobile" />
+
+    <EditText
+        android:id="@+id/et_enter_code"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/bg_et_solid_gray_f4f4f4_radius_2dp"
+        android:inputType="numberDecimal"
+        android:padding="8dp"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/text_self_auth"
+        app:layout_constraintTop_toBottomOf="@id/text_enter_phone"
+       />
+
+    <TextView
+        android:id="@+id/tv_retry_auth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Request new authentication code"
+        android:textColor="@color/colorOrangeF79256"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/text_self_auth"
+        app:layout_constraintTop_toBottomOf="@id/et_enter_code" />
+
+    <Button
+        android:id="@+id/buttonAuthorizedUser"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/bg_btn_solid_gray_c8c8c8_radius_8dp"
+        android:gravity="center"
+        android:paddingTop="11dp"
+        android:paddingBottom="12dp"
+        android:text="VERIFY"
+        android:textColor="@color/colorWhiteFDFD"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:enabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_retry_auth"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_google_verification_request"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/bg_btn_solid_orange_f79256_radius_8dp"
+        android:gravity="center"
+        android:paddingTop="11dp"
+        android:paddingBottom="12dp"
+        android:text="Verify with Google Login"
+        android:textColor="@color/colorWhiteFDFD"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAuthorizedUser" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
